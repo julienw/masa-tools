@@ -33,6 +33,11 @@ export default function Export() {
         Cet outil ne supporte que des documents exportés depuis Assoconnect en
         utilisant le format Excel 97.
       </p>
+      <p>
+        Cet outil va télécharger tous les fichiers externes contenus dans
+        l'export, et les ajouter bien rangés dans un zip qui sera ensuite
+        proposé au téléchargement.
+      </p>
       <form onSubmit={onFormSubmit}>
         <p>
           <label for="file">Choisissez un fichier:</label>
