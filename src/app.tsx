@@ -4,14 +4,15 @@ import Home from "./pages/home";
 import Export from "./pages/export";
 
 export function App() {
+  const baseUrl = import.meta.env.BASE_URL;
   return (
     <>
       <Header />
       <Router>
         {/* eslint-disable-line */ /* @ts-ignore type {path:string} is not assignalbe to type IntrinsicAttributes*/}
-        <Home path="/" />
+        <Home path={baseUrl} />
         {/* eslint-disable-line */ /* @ts-ignore type {path:string} is not assignalbe to type IntrinsicAttributes*/}
-        <Export path="/export" />
+        <Export path={`${baseUrl}export`} />
       </Router>
     </>
   );
