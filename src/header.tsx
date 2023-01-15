@@ -4,8 +4,8 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <Link href={baseUrl}>Home</Link>
-        <Link href={`${baseUrl}export`}>Export</Link>
+        <Link href={`${baseUrl}/`}>Home</Link>
+        <Link href={`${baseUrl}/export`}>Export</Link>
       </nav>
     </header>
   );

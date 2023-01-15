@@ -10,9 +10,9 @@ export function App() {
       <Header />
       <Router>
         {/* eslint-disable-line */ /* @ts-ignore type {path:string} is not assignalbe to type IntrinsicAttributes*/}
-        <Home path={baseUrl} />
+        <Home path={`${baseUrl}/`} />
         {/* eslint-disable-line */ /* @ts-ignore type {path:string} is not assignalbe to type IntrinsicAttributes*/}
-        <Export path={`${baseUrl}export`} />
+        <Export path={`${baseUrl}/export`} />
       </Router>
     </>
   );
