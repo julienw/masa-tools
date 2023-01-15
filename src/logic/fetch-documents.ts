@@ -52,7 +52,10 @@ function* extractPropertieswithUrl(participant: {
   }
 }
 
-export async function exportToZip(rawData: string) {
+export async function exportToZip(
+  rawData: string,
+  onUpdate: (progress: { max: number; finished: number }) => unknown
+) {
   const filename = `export-${Date.now()}`;
   const data = (await convertFromAssoconnectFormat(rawData)) as Array<{
     Nom: string;
@@ -66,7 +69,7 @@ export async function exportToZip(rawData: string) {
   let finished = 0;
   function notifyOne() {
     finished++;
-    console.log(`Finished: ${finished} / ${expected}`);
+    onUpdate({ max: expected, finished });
   }
 
   for (const participant of data) {

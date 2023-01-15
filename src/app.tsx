@@ -4,7 +4,10 @@ import Home from "./pages/home";
 import Export from "./pages/export";
 
 export function App() {
-  const baseUrl = import.meta.env.BASE_URL;
+  let baseUrl = import.meta.env.BASE_URL;
+  if (baseUrl.endsWith("/")) {
+    baseUrl = baseUrl.slice(0, -1);
+  }
   return (
     <>
       <Header />
