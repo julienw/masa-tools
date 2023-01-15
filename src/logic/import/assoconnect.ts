@@ -1,17 +1,39 @@
-import { parseStringPromise as parseString } from "xml2js";
-
+/*
+ * Le fichier XML en input ressemble à ça:
+ * <Workbook>
+ *   <Worksheet>
+ *     <Table>
+ *       <Row>
+ *         <Cell>
+ *           <Data ss:Type="<Type>">Cell Content</Data>
+ *         </Cell>
+ *         <Cell>
+ *           ...
+ *         </Cell>
+ *         ...
+ *       </Row>
+ *       <Row>
+ *         ...
+ *       </Row>
+ *       ...
+ *     </Table
+ *   </Worksheet>
+ * </Workbook>
+ */
 export async function convertFromAssoconnectFormat(input: string) {
-  const json = await parseString(input);
-  const rows = json.Workbook.Worksheet[0].Table[0].Row.map((row: any) => {
-    return row.Cell.map((cellData: any) => cellData.Data[0]._);
-  });
+  const domParser = new DOMParser();
+  const xmlDocument = domParser.parseFromString(input, "text/xml");
+
+  const rows = Array.from(xmlDocument.querySelectorAll("Row")).map((row) =>
+    Array.from(row.querySelectorAll("Cell")).map((cell) =>
+      (cell.textContent ?? "").trim()
+    )
+  );
 
   const header = rows[0];
   const values = rows.slice(1);
-  const result = values.map((valueList: any) =>
-    Object.fromEntries(
-      valueList.map((value: any, i: number) => [header[i], value])
-    )
+  const result = values.map((valueList) =>
+    Object.fromEntries(valueList.map((value, i) => [header[i], value]))
   );
 
   return result;
