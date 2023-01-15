@@ -10,6 +10,7 @@ export default function Export() {
   const onFormSubmit = async (e: Event) => {
     // Do not reload the page.
     e.preventDefault();
+    /* eslint-disable-line */ // @ts-ignore fileInput.current is possibly null
     const file = fileInput.current.files[0];
     const fileContent = await file.text();
     const { data: zipContent, filename } = await exportToZip(fileContent);

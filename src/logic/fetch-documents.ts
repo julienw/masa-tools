@@ -54,7 +54,11 @@ function* extractPropertieswithUrl(participant: {
 
 export async function exportToZip(rawData: string) {
   const filename = `export-${Date.now()}`;
-  const data = await convertFromAssoconnectFormat(rawData);
+  const data = (await convertFromAssoconnectFormat(rawData)) as Array<{
+    Nom: string;
+    Prénom: string;
+    [key: string]: string;
+  }>;
   const zipFile = new JSZip();
   const rootDir = zipFile.folder(filename);
 
@@ -73,7 +77,9 @@ export async function exportToZip(rawData: string) {
       what,
     } of extractPropertieswithUrl(participant)) {
       try {
+        /* eslint-disable-line */ // @ts-ignore
         const folder = rootDir.folder(what);
+        /* eslint-disable-line */ // @ts-ignore
         folder.file(
           `${nom}-${prenom}.${urlInformation.type}`,
           await fetchAsArrayBuffer(urlInformation.url)

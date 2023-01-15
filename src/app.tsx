@@ -8,7 +8,9 @@ export function App() {
     <>
       <Header />
       <Router>
+        {/* eslint-disable-line */ /* @ts-ignore type {path:string} is not assignalbe to type IntrinsicAttributes*/}
         <Home path="/" />
+        {/* eslint-disable-line */ /* @ts-ignore type {path:string} is not assignalbe to type IntrinsicAttributes*/}
         <Export path="/export" />
       </Router>
     </>
