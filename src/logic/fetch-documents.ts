@@ -54,7 +54,7 @@ function* extractPropertieswithUrl(participant: {
 
 export async function exportToZip(
   rawData: string,
-  onUpdate: (progress: { max: number; finished: number }) => unknown
+  onUpdate: (progress: { max: number; finished: number }) => unknown,
 ) {
   const filename = `export-${Date.now()}`;
   const data = (await convertFromAssoconnectFormat(rawData)) as Array<{
@@ -85,7 +85,7 @@ export async function exportToZip(
         /* eslint-disable-line */ // @ts-ignore
         folder.file(
           `${nom}-${prenom}.${urlInformation.type}`,
-          await fetchAsArrayBuffer(urlInformation.url)
+          await fetchAsArrayBuffer(urlInformation.url),
         );
       } catch (e) {
         const errorMessage = `Couldn't download ${what} for ${nom} ${prenom}: ${
