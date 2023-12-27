@@ -26,14 +26,14 @@ export async function convertFromAssoconnectFormat(input: string) {
 
   const rows = Array.from(xmlDocument.querySelectorAll("Row")).map((row) =>
     Array.from(row.querySelectorAll("Cell")).map((cell) =>
-      (cell.textContent ?? "").trim()
-    )
+      (cell.textContent ?? "").trim(),
+    ),
   );
 
   const header = rows[0];
   const values = rows.slice(1);
   const result = values.map((valueList) =>
-    Object.fromEntries(valueList.map((value, i) => [header[i], value]))
+    Object.fromEntries(valueList.map((value, i) => [header[i], value])),
   );
 
   return result;

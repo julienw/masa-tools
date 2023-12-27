@@ -18,7 +18,7 @@ export default function Export() {
     const fileContent = await file.text();
     const { data: zipContent, filename } = await exportToZip(
       fileContent,
-      onUpdate
+      onUpdate,
     );
     if (downloadUrl.current) {
       URL.revokeObjectURL(downloadUrl.current);
