@@ -17,7 +17,7 @@
     "preact-router": "^4.1.0"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.4.0",
+    "@preact/preset-vite": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.31.0",
