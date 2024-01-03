@@ -9,13 +9,13 @@ export function App() {
   return (
     <>
       <Header />
-        {/* eslint-disable-line */ /* @ts-ignore type we know this works, the type is just incorrect*/}
+      {/* @ts-expect-error type we know this works, the type is just incorrect*/}
       <Router history={createHashHistory()}>
-        {/* eslint-disable-line */ /* @ts-ignore type {path:string} is not assignalbe to type IntrinsicAttributes*/}
+        {/* @ts-expect-error type {path:string} is not assignable to type IntrinsicAttributes*/}
         <Home path="/" />
-        {/* eslint-disable-line */ /* @ts-ignore type {path:string} is not assignalbe to type IntrinsicAttributes*/}
+        {/* @ts-expect-error type {path:string} is not assignable to type IntrinsicAttributes*/}
         <Export path="/export" />
-        {/* eslint-disable-line */ /* @ts-ignore type {default} is not assignalbe to type IntrinsicAttributes*/}
+        {/* @ts-expect-error type {default} is not assignable to type IntrinsicAttributes*/}
         <NotFound default />
       </Router>
     </>
