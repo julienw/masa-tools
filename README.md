@@ -1,0 +1,1 @@
+Ce programme contient des outils utiles pour la gestion du [club de plongée MASA](https://www.montrougeplongee.com/). Pour l'instant il contient uniquement un outil permettant l'export simple de documents associés à des contacts sur [la plate-forme Assoconnect](https://www.assoconnect.com/).
