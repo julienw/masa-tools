@@ -1,9 +1,11 @@
+import { Link } from "preact-wouter";
+
 export default function Header() {
   return (
     <header>
       <nav>
-        <a href="/">Home</a>
-        <a href="/export">Export</a>
+        <Link href="/">Home</Link>
+        <Link href="/export">Export</Link>
       </nav>
     </header>
   );
