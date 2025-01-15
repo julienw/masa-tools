@@ -21,8 +21,8 @@
     "wouter": "^3.3.5"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.9.3",
-    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@preact/preset-vite": "^2.9.4",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.18.2",
     "eslint": "^8.57.0",
     "eslint-config-preact": "^1.5.0",
