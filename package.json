@@ -18,10 +18,10 @@
     "jszip": "^3.10.1",
     "preact": "^10.25.4",
     "preact-wouter": "^2.6.0",
-    "wouter": "^3.3.5"
+    "wouter": "^3.5.1"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.9.4",
+    "@preact/preset-vite": "^2.10.0",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.21.0",
     "eslint": "^8.57.0",
