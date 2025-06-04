@@ -18,7 +18,7 @@
     "jszip": "^3.10.1",
     "preact": "^10.26.6",
     "preact-wouter": "^2.6.0",
-    "wouter": "^3.7.0"
+    "wouter": "^3.7.1"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.1",
